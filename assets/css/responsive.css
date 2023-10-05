@@ -50,4 +50,9 @@
     .time__current {
         font-size: 3rem;
     }
+
+    .control__btn:hover {
+        border-color: var(--primary--color-one);
+        background-color: #c1c1c1;
+    }
 }
