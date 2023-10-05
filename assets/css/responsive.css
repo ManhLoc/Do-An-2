@@ -1,0 +1,53 @@
+/* PC */
+@media screen and (min-width: 992px) {
+}
+
+/* Tablet and Mobile */
+@media screen and (max-width: 991px) {
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+    /* Header */
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo:nth-child(2) {
+        /* display: none; */
+    }
+
+    .header__heading {
+        font-size: 3.5rem;
+    }
+
+    .header-right {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5px;
+    }
+
+    .header-right__item {
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+    }
+
+    .header-right__item:first-child {
+        display: none;
+    }
+
+    /* Main Body */
+    .control {
+        align-items: start;
+    }
+
+    .time__date,
+    .time__current {
+        font-size: 3rem;
+    }
+}
