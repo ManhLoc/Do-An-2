@@ -13,6 +13,7 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 const database = firebase.database();
 
+// ===================== Gửi xuống Firebase ===============================
 // Motor
 const btnTop = document.getElementById("controlTop");
 const btnLeft = document.getElementById("controlLeft");
@@ -162,6 +163,18 @@ btnBottom.addEventListener("mouseup", () => {
     });
 });
 
+// ===================== Lấy từ Firebase lên ===============================
+// Check connect
+database.ref("/Connect/SignUp").on("value", function (snapshot) {
+    if (snapshot.exists()) {
+        var checkConnect = snapshot.val();
+        if (checkConnect === 1)
+            alert("Đã được kết nối")
+        else
+            alert("Chưa được kết nối")
+    } else
+        alert("Không lấy được dữ liệu")
+});
 
 // var nhietDo = document.getElementById("temp");
 // var doAm = document.getElementById("humid");
