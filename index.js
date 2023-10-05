@@ -39,7 +39,7 @@ btnTop.addEventListener("touchend", () => {
 btnLeft.addEventListener("touchstart", () => {
     isPressed = true;
     database.ref("/Dong Co").update({
-        Motor: 3,
+        Motor: 4,
     });
 });
 
@@ -67,7 +67,7 @@ btnStop.addEventListener("touchend", () => {
 btnRight.addEventListener("touchstart", () => {
     isPressed = true;
     database.ref("/Dong Co").update({
-        Motor: 4,
+        Motor: 3,
     });
 });
 
@@ -109,7 +109,7 @@ btnTop.addEventListener("mouseup", () => {
 btnLeft.addEventListener("mousedown", () => {
     isPressed = true;
     database.ref("/Dong Co").update({
-        Motor: 3,
+        Motor: 4,
     });
 });
 
@@ -137,7 +137,7 @@ btnStop.addEventListener("mouseup", () => {
 btnRight.addEventListener("mousedown", () => {
     isPressed = true;
     database.ref("/Dong Co").update({
-        Motor: 4,
+        Motor: 3,
     });
 });
 
