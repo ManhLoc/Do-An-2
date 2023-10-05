@@ -22,6 +22,76 @@ const btnBottom = document.getElementById("controlBottom");
 
 let isPressed = false;
 
+btnTop.addEventListener("touchstart", () => {
+    isPressed = true;
+    database.ref("/Dong Co").update({
+        Motor: 1,
+    });
+});
+
+btnTop.addEventListener("touchend", () => {
+    isPressed = false;
+    database.ref("/Dong Co").update({
+        Motor: 0,
+    });
+});
+
+btnLeft.addEventListener("touchstart", () => {
+    isPressed = true;
+    database.ref("/Dong Co").update({
+        Motor: 3,
+    });
+});
+
+btnLeft.addEventListener("touchend", () => {
+    isPressed = false;
+    database.ref("/Dong Co").update({
+        Motor: 0,
+    });
+});
+
+btnStop.addEventListener("touchstart", () => {
+    isPressed = true;
+    database.ref("/Dong Co").update({
+        Motor: 0,
+    });
+});
+
+btnStop.addEventListener("touchend", () => {
+    isPressed = false;
+    database.ref("/Dong Co").update({
+        Motor: 0,
+    });
+});
+
+btnRight.addEventListener("touchstart", () => {
+    isPressed = true;
+    database.ref("/Dong Co").update({
+        Motor: 4,
+    });
+});
+
+btnRight.addEventListener("touchend", () => {
+    isPressed = false;
+    database.ref("/Dong Co").update({
+        Motor: 0,
+    });
+});
+
+btnBottom.addEventListener("touchstart", () => {
+    isPressed = true;
+    database.ref("/Dong Co").update({
+        Motor: 2,
+    });
+});
+
+btnBottom.addEventListener("touchend", () => {
+    isPressed = false;
+    database.ref("/Dong Co").update({
+        Motor: 0,
+    });
+});
+
 btnTop.addEventListener("mousedown", () => {
     isPressed = true;
     database.ref("/Dong Co").update({
