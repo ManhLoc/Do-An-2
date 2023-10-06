@@ -98,7 +98,7 @@ button {
     height: auto;
     padding: 20px;
     box-shadow: 12px 27px 45px -12px rgba(0, 0, 0, 0.2);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     background-color: #fff;
 }
 
@@ -119,9 +119,59 @@ button {
     padding: 5px;
 }
 
+/* Pump */
+.control-pump {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.control-pump__content {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--primary--color-one);
+    padding: 5px;
+}
+
+.button-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 35px auto; */
+    position: relative;
+    border-radius: 10px;
+    margin-left: 15px;
+    background: #fff;
+    outline: 2px solid #fff;
+}
+
+.toggle-btn {
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    color: var(--primary--color-one);
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    text-align: center;
+}
+
+.btn {
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 2;
+    width: 40px;
+    height: 100%;
+    background: var(--primary--color-one);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
 /* Control */
 .control {
-    height: 62vh;
     display: flex;
     align-items: center;
     justify-content: center;

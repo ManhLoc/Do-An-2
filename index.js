@@ -163,12 +163,26 @@ btnBottom.addEventListener("mouseup", () => {
     });
 });
 
+btnOffPump.onclick = function () {
+    document.getElementById('btnPump').style.left = '0'
+    database.ref("/Dong Co").update({
+        MayBom: 0,
+    });
+}
+
+btnOnPump.onclick = function () {
+    document.getElementById('btnPump').style.left = '43px'
+    database.ref("/Dong Co").update({
+        MayBom: 1,
+    });
+}
+
 // ===================== Lấy từ Firebase lên ===============================
 // Check connect
 database.ref("/Connect/SignUp").on("value", function (snapshot) {
     if (snapshot.exists()) {
         var checkConnect = snapshot.val();
-        if (checkConnect === 1)
+        if (checkConnect > 1)
             alert("Đã được kết nối")
         else
             alert("Chưa được kết nối")
@@ -229,6 +243,45 @@ database.ref("/Connect/SignUp").on("value", function (snapshot) {
 //     document.getElementById('btnFour').style.left = '43px'
 //     document.getElementById('imgFour').src = "./assets/img/bell-on.png"
 // }
+
+// Tự động update giá trị
+database.ref("/Dong Co/MayBom").on("value", function (snapshot) {
+    if (snapshot.exists()) {
+        var controlPump = snapshot.val();
+        if (controlPump == 1) {
+            document.getElementById('btnPump').style.left = '43px'
+        }
+        else {
+            document.getElementById('btnPump').style.left = '0'
+        }
+    } else console.log("No data available!");
+});
+
+//==================================
+// Kiểm tra kết nối Firebase Realtime Database
+// const databaseRef = firebase.database().ref(".info/connected");
+
+// databaseRef.on("value", (snapshot) => {
+//     if (snapshot.val() === true) {
+//         // Phần cứng đã được kết nối với Firebase
+//         // Bây giờ bạn có thể trả giá trị lên đường dẫn /Connect/SignUp
+//         firebase.database().ref("/Connect/SignUp").set(1);
+//     } else {
+//         // Phần cứng không được kết nối với Firebase
+//         // Xử lý tùy ý, ví dụ: trả về giá trị 0
+//         firebase.database().ref("/Connect/SignUp").set(0);
+//     }
+// });
+
+
+//get data once
+database
+    .ref("/Dong Co")
+    .get()
+    .then((snapshot) => {
+        if (snapshot.exists()) console.log(snapshot.val());
+        else console.log("No data available!");
+    });
 
 // Hiển thị thời gian
 function sokhongconghia(value) {
