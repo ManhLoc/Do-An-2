@@ -190,6 +190,14 @@ database.ref("/Connect/SignUp").on("value", function (snapshot) {
         alert("Không lấy được dữ liệu")
 });
 
+//HC04
+database.ref("/Sensor/HC04").on("value", function (snapshot) {
+    if (snapshot.exists()) {
+        var hc04 = snapshot.val();
+        document.getElementById("hc04").innerHTML = hc04;
+    } else console.log("No data available!");
+});
+
 // var nhietDo = document.getElementById("temp");
 // var doAm = document.getElementById("humid");
 // var khiGa = document.getElementById("gas");
