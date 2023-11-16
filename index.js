@@ -177,6 +177,18 @@ btnOnPump.onclick = function () {
     });
 }
 
+// ESC
+// JavaScript để cập nhật giá trị hiện tại khi thanh điều chỉnh được di chuyển
+var slider = document.getElementById("giatri");
+var giatriHientai = document.getElementById("giatri-hientai");
+
+slider.oninput = function () {
+    giatriHientai.innerHTML = this.value;
+    database.ref("/Dong Co").update({
+        ESC: Number(this.value),
+    });
+};
+
 // ===================== Lấy từ Firebase lên ===============================
 // Check connect
 database.ref("/Connect/SignUp").on("value", function (snapshot) {
@@ -190,7 +202,7 @@ database.ref("/Connect/SignUp").on("value", function (snapshot) {
         alert("Không lấy được dữ liệu")
 });
 
-//HC04
+// HC04
 database.ref("/Sensor/HC04").on("value", function (snapshot) {
     if (snapshot.exists()) {
         var hc04 = snapshot.val();
@@ -302,7 +314,7 @@ function sokhongconghia(value) {
 function hienthithoigian() {
     const time = new Date()
     let date = sokhongconghia(time.getDate())
-    let month = sokhongconghia(time.getMonth())
+    let month = sokhongconghia(time.getMonth() + 1)
     let year = time.getFullYear()
 
     let hour = sokhongconghia(time.getHours())

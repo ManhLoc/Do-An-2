@@ -178,6 +178,14 @@ button {
     justify-content: center;
 }
 
+.speedESC {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--primary--color-one);
+    padding: 5px;
+}
+
 .control-motor__top,
 .control-motor__center,
 .control-motor__bottom {

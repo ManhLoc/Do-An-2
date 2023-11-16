@@ -178,9 +178,24 @@
                         <p class="welcome">Welcome Lộc</p>
                         <p id="timeDate" class="time__date">22/09/2023</p>
                         <p id="timeCurrent" class="time__current">14:49:50</p>
-                        <p class="hc04">
-                            Khoảng cách tới gờ kính: <span id="hc04">23</span>cm
-                        </p>
+                    </div>
+                    <div class="control-all">
+                        <p class="hc04">HC-SR04: <span id="hc04">23</span>cm</p>
+                        <div class="speedESC">
+                            <p>Speed ESC:</p>
+                            <input
+                                type="range"
+                                id="giatri"
+                                name="giatri"
+                                min="0"
+                                max="1023"
+                                value="50"
+                            />
+                            <p>
+                                Giá trị hiện tại:
+                                <span id="giatri-hientai">50</span>
+                            </p>
+                        </div>
                     </div>
                     <div class="control-pump">
                         <p class="control-pump__content">Máy bơm:</p>
